@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"sort"
 	"strings"
 )
 
@@ -25,7 +24,6 @@ func main() {
 		lefts[point] = L
 		rights[point] = R
 	}
-	//counter := 0
 	positions := make([]string, 0)
 	for k, _ := range lefts {
 		if strings.HasSuffix(k, "A") {
@@ -46,9 +44,6 @@ func main() {
 		}
 		loops = append(loops, cnt)
 	}
-	sort.Slice(loops, func(i, j int) bool {
-		return loops[i] > loops[j]
-	})
 	result := lcmOfNumbers(loops)
 
 	fmt.Println(result, "moves")
